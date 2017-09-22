@@ -9,6 +9,7 @@
 # production
 /build
 /public
+/src/actions/api_keys.js
 
 # misc
 .DS_Store

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Headers from './components/header';
 import Home from './components/home';
+import Media from './containers/media';
+
 import './App.css';
 
 class App extends Component {
@@ -22,7 +24,12 @@ class App extends Component {
         return (
             <div className="container-fluid text-center">
                 <Headers onClick={()=> this.toggleHomeLibrary()} current={this.state.home}/>
-                <Home onClick={() => this.toggleHomeLibrary()} current={this.state.home} />
+                {this.state.current ? (
+                        <Home onClick={() => this.toggleHomeLibrary()} current={this.state.home} />
+                    ) : (
+                        <Media/>
+                    )
+                }
             </div>
         );
     }
