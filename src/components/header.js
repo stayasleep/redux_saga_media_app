@@ -28,8 +28,8 @@ const Headers = (props) => {
     }
 
     return(
-        <div>
-            <div className="navbar">
+        <div className="text-center">
+            <div className="navbar navbar-default">
                 <div className="home-link" onClick={clickHome} style={home}>Home</div>
                 <div className="lib-link" onClick={clickLibrary} style={lib}>Library</div>
             </div>

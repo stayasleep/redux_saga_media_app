@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Headers from './components/header';
+import Home from './components/home';
 import './App.css';
 
 class App extends Component {
@@ -19,8 +20,9 @@ class App extends Component {
 
     render() {
         return (
-            <div className="App">
+            <div className="container-fluid text-center">
                 <Headers onClick={()=> this.toggleHomeLibrary()} current={this.state.home}/>
+                <Home onClick={() => this.toggleHomeLibrary()} current={this.state.home} />
             </div>
         );
     }
