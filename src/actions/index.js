@@ -1,35 +1,20 @@
-import axios from 'axios';
-import {FLICKR_API_KEY, SHUTTER_CLIENT_ID, SHUTTER_CLIENT_SECRET} from './api_keys';
+import {SELECTED_IMAGE, SELECTED_VIDEO, SEARCH_MEDIA_REQUEST} from './types';
 
-const shutter_url = 'https://api.shutterstock.com/v2/videos/search';
-const flickr_url = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&text';
 
-/**
- * @description ShutterStock API request for searching vids
- * @params {String} search
- * @returns Function
- * */
-export function shutterStockVids(search) {
-    //create 64 bit encoded string for oauth
-    const basicAuth = ()=> 'Basic'.concat(window.btoa(`${SHUTTER_CLIENT_ID}:${SHUTTER_CLIENT_SECRET}`));
-    //set custom header
-    const config = {
-        headers: {
-            Authorization: basicAuth()
-        }
-    };
-    axios.get(`${shutter_url}?query=${search}&page=1&per_page=10`,config).then((response) => {
-        console.log('shutter get',response);
-    })
-}
+// Returns an action type, SELECTED_IMAGE and the image selected
+export const selectImageAction = (image) => ({
+    type: SELECTED_IMAGE,
+    image
+});
 
-/**
- * @description Flickr API request for photo search
- * @params {String} search
- * @returns Function
- * */
-export function flickrImages(search){
-    axios.get(`${flickr_url}=${search}&api_key=${FLICKR_API_KEY}&format=json&nojsoncallback=1&per_page=10`).then((response)=>{
-        console.log('flick get',response);
-    })
-}
+// Returns an action type, SELECTED_VIDEO and the video selected
+export const selectVideoAction = (video) => ({
+    type: SELECTED_VIDEO,
+    video
+});
+
+// Returns an action type, SEARCH_MEDIA_REQUEST and the search criteria
+export const searchMediaAction = (payload) => ({
+    type: SEARCH_MEDIA_REQUEST,
+    payload
+});

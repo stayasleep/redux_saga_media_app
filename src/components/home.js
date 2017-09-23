@@ -1,7 +1,9 @@
 import React from 'react';
 
 const Home = (props) => {
+    console.log('heom');
     function handleClick(event){
+
         if(props.current){
             props.onClick();
         }

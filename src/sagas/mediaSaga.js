@@ -1,5 +1,6 @@
 import { put, call } from 'redux-saga/effects';
-import {flickrImages, shutterStockVids} from '../actions/index';
+// import {flickrImages, shutterStockVids} from '../actions/index';
+import {flickrImages, shutterStockVids} from '../actions/api';
 import {SHUTTER_VIDEOS_SUCCESS, SELECTED_VIDEO, FLICKR_IMAGES_SUCCESS, SELECTED_IMAGE, SEARCH_MEDIA_ERROR} from '../actions/types';
 
 //we could pass the store's dispatch to the generator, and invoke it in response [like previous redux/thunk examples]

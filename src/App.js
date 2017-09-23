@@ -24,7 +24,7 @@ class App extends Component {
         return (
             <div className="container-fluid text-center">
                 <Headers onClick={()=> this.toggleHomeLibrary()} current={this.state.home}/>
-                {this.state.current ? (
+                {this.state.home ? (
                         <Home onClick={() => this.toggleHomeLibrary()} current={this.state.home} />
                     ) : (
                         <Media/>
